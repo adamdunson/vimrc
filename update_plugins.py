@@ -17,6 +17,7 @@ from os import path
 #--- Globals ----------------------------------------------
 PLUGINS = """
 ack.vim https://github.com/mileszs/ack.vim
+ag.vim https://github.com/rking/ag.vim
 ale https://github.com/w0rp/ale
 bufexplorer https://github.com/corntrace/bufexplorer
 ctrlp.vim https://github.com/ctrlpvim/ctrlp.vim
@@ -31,7 +32,6 @@ nerdtree-ag https://github.com/taiansu/nerdtree-ag
 nginx.vim https://github.com/chr4/nginx.vim
 open_file_under_cursor.vim https://github.com/amix/open_file_under_cursor.vim
 snipmate-snippets https://github.com/scrooloose/snipmate-snippets
-syntastic https://github.com/scrooloose/syntastic
 tlib https://github.com/vim-scripts/tlib
 vim-abolish https://github.com/tpope/tpope-vim-abolish
 vim-addon-mw-utils https://github.com/MarcWeber/vim-addon-mw-utils
