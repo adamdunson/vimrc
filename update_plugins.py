@@ -24,11 +24,11 @@ goyo.vim https://github.com/junegunn/goyo.vim
 gruvbox https://github.com/morhetz/gruvbox
 lightline-ale https://github.com/maximbaz/lightline-ale
 lightline.vim https://github.com/itchyny/lightline.vim
-matchit.zip https://github.com/benjifisher/matchit.zip.git
+matchit.zip https://github.com/benjifisher/matchit.zip
 mayansmoke https://github.com/vim-scripts/mayansmoke
 mru.vim https://github.com/vim-scripts/mru.vim
 nerdtree https://github.com/scrooloose/nerdtree
-nerdtree-ag https://github.com/taiansu/nerdtree-ag.git
+nerdtree-ag https://github.com/taiansu/nerdtree-ag
 nginx.vim https://github.com/chr4/nginx.vim
 open_file_under_cursor.vim https://github.com/amix/open_file_under_cursor.vim
 snipmate-snippets https://github.com/scrooloose/snipmate-snippets
@@ -46,7 +46,7 @@ vim-gitgutter https://github.com/airblade/vim-gitgutter
 vim-go https://github.com/fatih/vim-go
 vim-indent-object https://github.com/michaeljsmith/vim-indent-object
 vim-less https://github.com/groenewege/vim-less
-vim-lucius https://github.com/jonathanfilip/vim-lucius.git
+vim-lucius https://github.com/jonathanfilip/vim-lucius
 vim-markdown https://github.com/plasticboy/vim-markdown
 vim-markdown https://github.com/tpope/vim-markdown
 vim-multiple-cursors https://github.com/terryma/vim-multiple-cursors
