@@ -16,47 +16,48 @@ from os import path
 
 #--- Globals ----------------------------------------------
 PLUGINS = """
-auto-pairs https://github.com/jiangmiao/auto-pairs
-ale https://github.com/w0rp/ale
-vim-yankstack https://github.com/maxbrunsfeld/vim-yankstack
 ack.vim https://github.com/mileszs/ack.vim
+ale https://github.com/w0rp/ale
 bufexplorer https://github.com/corntrace/bufexplorer
 ctrlp.vim https://github.com/ctrlpvim/ctrlp.vim
+goyo.vim https://github.com/junegunn/goyo.vim
+gruvbox https://github.com/morhetz/gruvbox
+lightline-ale https://github.com/maximbaz/lightline-ale
+lightline.vim https://github.com/itchyny/lightline.vim
+matchit.zip https://github.com/benjifisher/matchit.zip.git
 mayansmoke https://github.com/vim-scripts/mayansmoke
+mru.vim https://github.com/vim-scripts/mru.vim
 nerdtree https://github.com/scrooloose/nerdtree
+nerdtree-ag https://github.com/taiansu/nerdtree-ag.git
 nginx.vim https://github.com/chr4/nginx.vim
 open_file_under_cursor.vim https://github.com/amix/open_file_under_cursor.vim
 snipmate-snippets https://github.com/scrooloose/snipmate-snippets
 tlib https://github.com/vim-scripts/tlib
+vim-abolish https://github.com/tpope/tpope-vim-abolish
 vim-addon-mw-utils https://github.com/MarcWeber/vim-addon-mw-utils
 vim-bundle-mako https://github.com/sophacles/vim-bundle-mako
 vim-coffee-script https://github.com/kchmck/vim-coffee-script
 vim-colors-solarized https://github.com/altercation/vim-colors-solarized
+vim-commentary https://github.com/tpope/vim-commentary
+vim-expand-region https://github.com/terryma/vim-expand-region
+vim-flake8 https://github.com/nvie/vim-flake8
+vim-fugitive https://github.com/tpope/vim-fugitive
+vim-gitgutter https://github.com/airblade/vim-gitgutter
+vim-go https://github.com/fatih/vim-go
 vim-indent-object https://github.com/michaeljsmith/vim-indent-object
 vim-less https://github.com/groenewege/vim-less
+vim-lucius https://github.com/jonathanfilip/vim-lucius.git
+vim-markdown https://github.com/plasticboy/vim-markdown
 vim-markdown https://github.com/tpope/vim-markdown
+vim-multiple-cursors https://github.com/terryma/vim-multiple-cursors
+vim-pug https://github.com/digitaltoad/vim-pug
 vim-pyte https://github.com/therubymug/vim-pyte
+vim-repeat https://github.com/tpope/vim-repeat
 vim-snipmate https://github.com/garbas/vim-snipmate
 vim-snippets https://github.com/honza/vim-snippets
 vim-surround https://github.com/tpope/vim-surround
-vim-expand-region https://github.com/terryma/vim-expand-region
-vim-multiple-cursors https://github.com/terryma/vim-multiple-cursors
-vim-fugitive https://github.com/tpope/vim-fugitive
-goyo.vim https://github.com/junegunn/goyo.vim
+vim-yankstack https://github.com/maxbrunsfeld/vim-yankstack
 vim-zenroom2 https://github.com/amix/vim-zenroom2
-vim-repeat https://github.com/tpope/vim-repeat
-vim-commentary https://github.com/tpope/vim-commentary
-vim-go https://github.com/fatih/vim-go
-vim-gitgutter https://github.com/airblade/vim-gitgutter
-gruvbox https://github.com/morhetz/gruvbox
-vim-flake8 https://github.com/nvie/vim-flake8
-vim-pug https://github.com/digitaltoad/vim-pug
-lightline.vim https://github.com/itchyny/lightline.vim
-lightline-ale https://github.com/maximbaz/lightline-ale
-vim-abolish https://github.com/tpope/tpope-vim-abolish
-mru.vim https://github.com/vim-scripts/mru.vim
-vim-markdown https://github.com/plasticboy/vim-markdown
-comfortable-motion.vim https://github.com/yuttie/comfortable-motion.vim
 """.strip()
 
 GITHUB_ZIP = '%s/archive/master.zip'
