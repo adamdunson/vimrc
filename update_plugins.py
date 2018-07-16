@@ -28,7 +28,7 @@ matchit.zip https://github.com/benjifisher/matchit.zip
 mayansmoke https://github.com/vim-scripts/mayansmoke
 mru.vim https://github.com/vim-scripts/mru.vim
 nerdtree https://github.com/scrooloose/nerdtree
-nerdtree-ag https://github.com/taiansu/nerdtree-ag
+nerdtree-ack https://github.com/tyok/nerdtree-ack
 nginx.vim https://github.com/chr4/nginx.vim
 open_file_under_cursor.vim https://github.com/amix/open_file_under_cursor.vim
 snipmate-snippets https://github.com/scrooloose/snipmate-snippets
