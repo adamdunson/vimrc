@@ -22,6 +22,7 @@ bufexplorer https://github.com/corntrace/bufexplorer
 ctrlp.vim https://github.com/ctrlpvim/ctrlp.vim
 goyo.vim https://github.com/junegunn/goyo.vim
 gruvbox https://github.com/morhetz/gruvbox
+kotlin-vim https://github.com/udalov/kotlin-vim
 lightline-ale https://github.com/maximbaz/lightline-ale
 lightline.vim https://github.com/itchyny/lightline.vim
 matchit.zip https://github.com/benjifisher/matchit.zip

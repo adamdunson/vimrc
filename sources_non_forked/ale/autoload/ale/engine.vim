@@ -18,6 +18,22 @@ if !has_key(s:, 'executable_cache_map')
     let s:executable_cache_map = {}
 endif
 
+
+function! ale#engine#CleanupEveryBuffer() abort
+    for l:key in keys(g:ale_buffer_info)
+        " The key could be a filename or a buffer number, so try and
+        " convert it to a number. We need a number for the other
+        " functions.
+        let l:buffer = str2nr(l:key)
+
+        if l:buffer > 0
+            " Stop all jobs and clear the results for everything, and delete
+            " all of the data we stored for the buffer.
+            call ale#engine#Cleanup(l:buffer)
+        endif
+    endfor
+endfunction
+
 function! ale#engine#ResetExecutableCache() abort
     let s:executable_cache_map = {}
 endfunction
@@ -96,8 +112,25 @@ function! ale#engine#ManageDirectory(buffer, directory) abort
     call add(g:ale_buffer_info[a:buffer].temporary_directory_list, a:directory)
 endfunction
 
+function! ale#engine#CreateFile(buffer) abort
+    " This variable can be set to 1 in tests to stub this out.
+    if get(g:, 'ale_create_dummy_temporary_file')
+        return 'TEMP'
+    endif
+
+    let l:temporary_file = ale#util#Tempname()
+    call ale#engine#ManageFile(a:buffer, l:temporary_file)
+
+    return l:temporary_file
+endfunction
+
 " Create a new temporary directory and manage it in one go.
 function! ale#engine#CreateDirectory(buffer) abort
+    " This variable can be set to 1 in tests to stub this out.
+    if get(g:, 'ale_create_dummy_temporary_file')
+        return 'TEMP_DIR'
+    endif
+
     let l:temporary_directory = ale#util#Tempname()
     " Create the temporary directory for the file, unreadable by 'other'
     " users.
@@ -214,6 +247,7 @@ function! s:HandleExit(job_id, exit_code) abort
 
     if l:next_chain_index < len(get(l:linter, 'command_chain', []))
         call s:InvokeChain(l:buffer, l:executable, l:linter, l:next_chain_index, l:output)
+
         return
     endif
 
@@ -222,7 +256,12 @@ function! s:HandleExit(job_id, exit_code) abort
         call ale#history#RememberOutput(l:buffer, a:job_id, l:output[:])
     endif
 
-    let l:loclist = ale#util#GetFunction(l:linter.callback)(l:buffer, l:output)
+    try
+        let l:loclist = ale#util#GetFunction(l:linter.callback)(l:buffer, l:output)
+    " Handle the function being unknown, or being deleted.
+    catch /E700/
+        let l:loclist = []
+    endtry
 
     call ale#engine#HandleLoclist(l:linter.name, l:buffer, l:loclist)
 endfunction
@@ -535,7 +574,7 @@ function! s:RunJob(options) abort
     if get(g:, 'ale_run_synchronously') == 1
         " Run a command synchronously if this test option is set.
         let s:job_info_map[l:job_id].output = systemlist(
-        \   type(l:command) == type([])
+        \   type(l:command) is v:t_list
         \   ?  join(l:command[0:1]) . ' ' . ale#Escape(l:command[2])
         \   : l:command
         \)
@@ -573,9 +612,8 @@ function! ale#engine#ProcessChain(buffer, linter, chain_index, input) abort
                 \)
             endif
 
+            " If we have a command to run, execute that.
             if !empty(l:command)
-                " We hit a command to run, so we'll execute that
-
                 " The chain item can override the output_stream option.
                 if has_key(l:chain_item, 'output_stream')
                     let l:output_stream = l:chain_item.output_stream
